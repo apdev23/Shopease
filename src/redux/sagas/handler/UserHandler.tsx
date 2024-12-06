@@ -28,9 +28,6 @@ export function* getAuthHadler(action: any) {
     try {
         yield put(getAuthLoading());
         const response: { data: any } = yield call(request, config);
-        console.log("response", response?.data);
-
-        // const { data } = response;
 
         yield put(getAuthSuccess(response?.data));
 
